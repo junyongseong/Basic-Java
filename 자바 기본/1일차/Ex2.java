@@ -37,7 +37,6 @@ public class Ex2 {
 		int b6 = 2100000000;//2147383600
 		System.out.println(b5+b6);// b5+b6 후 출력
 		
-		long b7 = 2100000000;
-		System.out.printf("long형크기 %d\n",Long.SIZE);
+		long b7 = 2100000000000L;//long 형은 뒤에 소문자 l 혹은 대문자 L을 붙인다.
 	}
 }
