@@ -12,7 +12,7 @@ public class Ex9_Oper {
 		int v1=scan.nextInt();
 		
 		System.out.println("입력한 값은 20대 인가?");
-		boolean res = ((v1>20)) && ((v1<30));
+		boolean res = ((v1>=20)) && ((v1<30));
 		System.out.println(res);
 	}
 }
