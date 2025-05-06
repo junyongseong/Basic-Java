@@ -20,5 +20,6 @@ public class Ex10_if {
 			System.out.println("합격!");
 		else
 			System.out.println("재도전");
+		scan.close()
 	}
 }
