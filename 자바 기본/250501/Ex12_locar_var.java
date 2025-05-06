@@ -31,7 +31,6 @@ public class Ex12_locar_var {
 			str = "재도전";
 			System.out.println(str);
 		}
-		
 		scan.close();
 	}
 }
