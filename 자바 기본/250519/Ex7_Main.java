@@ -11,9 +11,9 @@ public class Ex7_Main {
 		
 		
 		Ex7_Sedan g80 = new Ex7_Sedan();
-		gr1.setModel("G80");
-		gr1.setMin_price(6000);
-		gr1.setSunroof(false);
+		g80.setModel("G80");
+		g80.setMin_price(6000);
+		g80.setSunroof(false);
 		
 		System.out.println(gr1.getMin_price());
 
