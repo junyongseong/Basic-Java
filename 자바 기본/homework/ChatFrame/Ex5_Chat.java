@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -37,7 +38,10 @@ public class Ex5_Chat extends JFrame implements ActionListener{
 		//첫번째 화면작업
 		chat1_p1 =new JPanel(new BorderLayout());
 		icon =new ImageIcon("src/images/2.png");
-		icon_lb= new JLabel(icon);
+		Image img =icon.getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH);
+		
+		
+		icon_lb= new JLabel(new ImageIcon(img));
 		chat1_p1.add(icon_lb);//첫번째 화면 가운데에 이미지 표현
 		s_p1=new JPanel(new FlowLayout(FlowLayout.RIGHT));
 		s_p2=new JPanel(new FlowLayout(FlowLayout.RIGHT));
