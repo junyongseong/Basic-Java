@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	DTD(Document Type Definition) : XML문서의 형식을 정의하는 문선	
+ -->
+ <!DOCTYPE total [
+ 	<!ELEMENT total (name,phone)>
+ 	<!ELEMENT name (#PCDATA)> <!-- PCDATA : 파싱을 필요로 하는 문자 데이터 의미)-->
+ 	<!ELEMENT phone (#PCDATA)>
+ ]>
+ <total>
+ 	<name>아무개</name>
+ 	<phone>010-1111-2222</phone>
+ </total>

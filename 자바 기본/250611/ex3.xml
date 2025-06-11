@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	자동차 정보를 xml로 표현하자
+	(모델명, 제조사, 가격, ...)
+-->
+<total>
+	<car>
+		<vender>BMW</vender>
+		<model>BMW520d</model>
+		<price>80000000</price>
+	</car>
+	<car>
+		<vender>현대</vender>
+		<model>아반떼</model>
+		<price>20000000</price>
+	</car>
+</total>

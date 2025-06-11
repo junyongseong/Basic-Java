@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 주석
+	현재 문서는 친구들의 비상연락망을 만들어 보자 -->
+<total>
+	<friend>
+		<name>이도</name>
+		<cellphone>010-2312-1234</cellphone>
+	</friend>
+	<friend>
+		<name>마루치</name>
+		<cellphone>010-2222-1534</cellphone>
+	</friend>
+	<friend>
+		<name>아무개</name>
+		<cellphone>010-1112-2222</cellphone>
+	</friend>
+</total>
