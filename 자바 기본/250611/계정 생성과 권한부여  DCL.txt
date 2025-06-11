@@ -1,0 +1,54 @@
+-- 계정 생성과 권한부여 : DCL
+
+-- 사용자 계정을 생성하려면 우선 관리자계정 (root)으로 로그인이 되어야한다.
+--	[구성]
+--	 현재 서버에서만 접속 할 수 있는 계정 생성
+--		CREATE USER '사용자계정'@'localhost'
+--		IDENTIFIED BY '비밀번호';
+
+--	해당 ip에서만 접속할 수 있는 계정 생성
+--		CREATE USER '사용자계정'@'192.168.10.114'
+--		IDENTIFIED BY '비밀번호';
+
+--	해당 ip영역대에서만 접속할 수 있는 계정 생성
+--		CREATE USER '사용자계정'@'192.168.%'
+--		IDENTIFIED BY '비밀번호';
+
+-- 	어디에서든 접속할 수 있는 계정 생성
+--		CREATE USER '사용자계정'@'%'
+--		IDENTIFIED BY '비밀번호';
+
+	CREATE USER 'tset_admin'@'%'
+	IDENTIFIED BY '1111';
+
+-- 계정이 생성되었지만 my_db에 접속조차 할 수 가 없다. 이유는
+--	권한이 없기 때문이다. 권한을 오너(최초 DB를 생성한 계정)가 부여해 줘야 한다.
+
+-- 해당 DB의 모든 객체에 대한 모든 권한 주는  법  *.* 이 모든 객체 
+--	GRANT all PRIVILEGES on *.* TO '계정명'@'호스트';
+
+-- 해당 DB의 모든 객체에 대한 SELECT와 INSERT 권한만 주고 싶다면... 
+--	GRANT select, insert PRIVILEFES on *.* TO '계정명'@'호스트';
+
+-- 우린 test_admin에게 my_db의 모든 객체들에게 모든 권한을 부여하자!
+	
+	GRANT all PRIVILEGES  my_db.* TO 'test_admin'@'%';
+
+-- 권한 회수
+-- [구성]
+--	REVOKE all ON my_db.* FROM '계정명'@'호스트';
+
+
+	REVOKE all ON my_db.* FROM 'test_admin'@'%';
+
+
+
+
+
+
+
+
+
+
+
+
