@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE 이달의베스트셀러[
+	<!ELEMENT 이달의베스트셀러 (베스트셀러+)>
+	<!ELEMENT 베스트셀러 (제목, 저자+, 출판사, 가격, 이벤트?)>
+	<!ELEMENT 제목 (#PCDATA)>
+	<!ELEMENT 저자 (#PCDATA)>
+	<!ELEMENT 출판사 (#PCDATA)>
+	<!ELEMENT 가격 (#PCDATA)>
+	<!ELEMENT 이벤트 (#PCDATA)>
+	
+	<!-- 속성 설정법 -->
+	<!ATTLIST 베스트셀러 ISBN CDATA #REQUIRED>
+	<!ATTLIST 베스트셀러 표지 CDATA #FIXED "120">
+	<!ATTLIST 베스트셀러 size CDATA #IMPLIED>
+]>
+<이달의베스트셀러>
+	<베스트셀러 ISBN ="J001" 표지="120">
+		<제목>총균쇠</제목>
+		<저자>재레드 다이아몬드</저자>
+		<출판사>교보문고</출판사>
+		<가격>26820원</가격>
+		<이벤트></이벤트>
+	</베스트셀러>
+	<베스트셀러 ISBN="A020" size ="300">
+		<제목>총균쇠</제목>
+		<저자>재레드 다이아몬드</저자>
+		<출판사>교보문고</출판사>
+		<가격>26820원</가격>
+		<이벤트></이벤트>
+	</베스트셀러>
+	
+</이달의베스트셀러>

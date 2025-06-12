@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Computer[
+	<!ELEMENT Computer (CPU, VGA?, RAM, SSD+)>
+	<!ELEMENT CPU (#PCDATA)>
+	<!ELEMENT VGA (#PCDATA)>
+	<!ELEMENT RAM (#PCDATA)>
+	<!ELEMENT SSD (#PCDATA)>
+]>
+<Computer>
+	<CPU>AMD 라이젠 8500</CPU>
+	<VGA>GFORCE 4080</VGA>
+	<RAM>32G</RAM>
+	<SSD>1TB</SSD>
+</Computer>
