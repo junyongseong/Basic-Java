@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="emp">
+    <select id="total" resultType="pm.vo.EmpVO">
+        select * from emp
+    </select>
+    <!-- search_name은  SQL문을 수행 할 때 인자로 문자열을 하나 받아서
+        변수 #{n}에 대입하여 실행한다. 그 결과를 각 레코드당 EmpVO가 만들어져서
+        List에 담아서 호출한 곳으로 반환한다.-->
+    <select id="search_name" resultType="pm.vo.EmpVO" parameterType="String">
+        SELECT * FROM emp
+        WHERE ename LIKE CONCAT('%',#{n},'%')
+    </select>
+    <select id="search_empno" resultType="pm.vo.EmpVO" parameterType="String">
+        SELECT * FROM emp
+        WHERE empno LIKE CONCAT('%',#{n},'%')
+    </select>
+
+    <select id="search_job" resultType="pm.vo.EmpVO" parameterType="String">
+        SELECT * FROM emp
+        WHERE job LIKE CONCAT('%', #{n}, '%')
+    </select>
+
+    <select id="search_deptno" resultType="pm.vo.EmpVO" parameterType="String">
+        SELECT * FROM emp
+        WHERE deptno LIKE CONCAT('%',#{n},'%')
+    </select>
+</mapper>
