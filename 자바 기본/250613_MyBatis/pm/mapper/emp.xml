@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="emp">
+    <!-- 인자인 Map구조에 searchType이라는 키의 값이 0이면 "이름 검색",
+        1이면 "직종검색", 2이면 "부서검색" 그리고 검색어는 searchValue라는 키로
+        저장되어 넘어온다. -->
+    <select id="search" resultType="pm.vo.EmpVO" parameterType="Map">
+        SELECT * FROM emp
+        <where>
+            <choose>
+                <when test = "searchType == 0"><!-- 이름검색-->
+                    ename LIKE CONCAT('%',#{searchValue},'%')
+                </when>
+                <when test = "searchType == 1"><!-- 직종검색-->
+                    job LIKE CONCAT('%',#{searchValue},'%')
+                </when>
+                <when test = "searchType == 2"><!-- 부서검색-->
+                    deptno = #{searchValue}
+                </when>
+            </choose>
+        </where>
+    </select>
+</mapper>
