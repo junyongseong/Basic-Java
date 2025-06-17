@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="locations">
+    <select id="getLoc_code" resultType="am.vo.locationsVO" parameterType="String">
+        select * from dept
+        where deptno = #{key}
+    </select>
+    <!-- 하나의 부서가 여러개의 사원들 정보를 수집하는 예문-->
+    <resultMap id="res2" type="am.vo.locationsVO">
+        <id column="loc_code" property="loc_code"/>
+
+        <collection property="list" ofType="am.vo.DeptVOVO"
+                    select="emp.search_dept" column="loc_code"/>
+        <!-- property는 deptVO의 속성 -->
+    </resultMap>
+
+    <select id="all" resultMap="res1">
+        SELECT * FROM dept
+    </select>
+
+</mapper>
