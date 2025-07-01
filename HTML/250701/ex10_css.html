@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /* css 주석
+    현재 문서에서 table이라는 태그를 만났을 때 다음의
+    내용을 적용시킨다.*/
+    table{
+      width: 400px;/*테이블 전체 너비*/
+      border: 1px solid #ababab;/*얇은 선 긋기 뒤에는 색상 dashed면 점선*/
+      border-collapse: collapse;/*이중선 해결*/
+    }
+    td,th{ /*td또는 th를 만났을때*/
+      border: 1px solid #ababab;
+    }
+    thead>tr>th{/* th태그를 만나면 배경색을 지정한다. >는 안에*/
+      background-color: #cccccc
+    }
+
+
+  </style>
+</head>
+<body>
+<article>
+  <header>
+    <h2>테이블 연습</h2>
+  </header>
+  <div>
+    <table id="t1">
+      <caption>사원테이블</caption>
+      <thead>
+      <tr>
+        <th>사번</th>
+        <th>이름</th>
+        <th>직종</th>
+        <th>이메일</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1000</td>
+        <th>이도</th>
+        <td>Dev</td>
+        <td>lee@naber.com</td>
+      </tr>
+      <tr>
+        <td>1001</td>
+        <th>홍길동</th>
+        <td>Man</td>
+        <td>hong@naber.com</td>
+      </tr>
+      <tr>
+        <td>1001</td>
+        <th>을불</th>
+        <td>Man</td>
+        <td>el@naber.com</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="4">자료제공: SIST인사과</td>
+      </tr>
+      </tfoot>
+    </table>
+
+    <table id="t2">
+      <caption>사원테이블</caption>
+      <thead>
+      <tr>
+        <th>사번</th>
+        <th>이름</th>
+        <th>직종</th>
+        <th>이메일</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1000</td>
+        <td>이도</td>
+        <td>Dev</td>
+        <td>lee@naber.com</td>
+      </tr>
+      <tr>
+        <td>1001</td>
+        <td>홍길동</td>
+        <td>Man</td>
+        <td>hong@naber.com</td>
+      </tr>
+      <tr>
+        <td>1001</td>
+        <td>을불</td>
+        <td>Man</td>
+        <td>el@naber.com</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="4">자료제공: SIST인사과</td>
+      </tr>
+      </tfoot>
+    </table>
+
+  </div>
+</article>
+</body>
+</html>

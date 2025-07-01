@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    #t2{ /*table태그를 만날때 아래와 같은 스타일을 적용시킴*/
+      /*테이블 전체 넓이*/
+      width: 300px;
+
+      border: 1px solid #000000;
+      /*기본적으로 인식하고 있는 border의 속성을 무시하는것*/
+      border-collapse: collapse;
+    }
+    #t2>tbody>tr>td{
+      text-align: center;
+      border: 1px solid #000000;
+    }
+    table>caption{
+      text-indent: -9999px;
+    }
+    /*.은 클래스를 지정한다.*/
+    /*아직 정의만했기 때문에 가져가 써야 반영된다.*/
+    .txtCenter{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<articl>
+  <header>
+    <h2>문제1</h2>
+  </header>
+  <div>
+    <table id="t1">
+      <caption>이미지테이블</caption>
+      <tbody>
+      <tr>
+        <td ><img src="../img/1.jpg"></td>
+        <td class="txtCenter">고요함</td>
+        <td><img src="../img/2.jpg"></td>
+      </tr>
+      <tr>
+        <td class="txtCenter">외침 속</td>
+        <td><img src="../img/3.jpg"></td>
+        <td class="txtCenter">항해</td>
+      </tr>
+      <tr>
+        <td><img src="../img/4.jpg"></td>
+        <td class="txtCenter">봄의옷</td>
+        <td><img src="../img/5.jpg"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</articl>
+<article>
+  <header>
+    <h2>문제2</h2>
+  </header>
+  <div>
+    <table id="t2">
+      <caption>테이블 병합</caption>
+      <tbody>
+      <tr class="txtCenter">
+        <td rowspan="3">사진</td>
+        <td colspan="2">타이틀입니다.</td>
+      </tr>
+      <tr class="txtCenter">
+        <td>데이터</td>
+        <td>데이터</td>
+      </tr>
+      <tr>
+        <td>데이터</td>
+        <td>데이터</td>
+      </tr>
+      <tr class="txtCenter">
+        <td>데이터</td>
+        <td>데이터</td>
+        <td>데이터</td>
+      </tr>
+      <tr class="txtCenter">
+        <td>데이터</td>
+        <td rowspan="3" colspan="2"></td>
+      </tr>
+      <tr class="txtCenter">
+        <td>데이터</td>
+      </tr>
+      <tr class="txtCenter">
+        <td>데이터</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</article>
+</body>
+</html>
