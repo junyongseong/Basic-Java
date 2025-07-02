@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    article>div>div{
+      width: 200px;
+      height: 200px;
+      margin-bottom : 10px;
+      border: 1px solid red;
+    }
+    div.box{/*div 태그들 중 클래스가 box인 요소들만 적용*/
+      background-image: url("../img/cap.PNG");
+      background-repeat: no-repeat;/*repat-x 이런것도 있음 옆으로만 반복*/
+      background-position: center;
+    }
+    #box2{
+      padding: 50px;
+    }
+  </style>
+</head>
+<body>
+  <article>
+    <header>
+      <h2>박스 개념</h2>
+    </header>
+    <div>
+      <div id="box1" class="box">BOX1</div>
+      <div id="box2">BOX2</div>
+      <div id="box3" class="box">BOX3</div>
+    </div>
+  </article>
+</body>
+</html>

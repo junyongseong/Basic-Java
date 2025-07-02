@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    table#t1{
+      width: 500px;
+      border-collapse: collapse;
+    }
+    #t1 td, #t1 th{ /* (자손 선택자)아이디가 t1인 요소의 하위에 */
+      border: 1px solid #000;
+    }
+    #t1>tfoot>tr>td{/*자식선택자*/
+      text-align: right;
+    }
+    .txt_red{
+      color: #f00;
+      font-weight: bold;
+    }
+    .num{
+      text-align: center;
+      font-weight: bold;
+    }
+    .txt_center{
+      text-align: center;
+    }
+
+
+  </style>
+</head>
+<body>
+  <article>
+    <header>
+      <h2>선택자 연습</h2>
+    </header>
+    <div>
+      <table id="t1">
+        <caption>CSS선택자 연습 테이블</caption>
+        <tfoot>
+          <tr>
+            <td colspan="4">자료제공 : 쌍용교육센터</td>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td class="num">1</td>
+            <td class="txt_center">요소(태그) 선택자</td>
+            <td class="txt_center">태그명</td>
+            <td class="txt_red"> div{}, article{}</td>
+          </tr>
+          <tr>
+            <td class="num">2</td>
+            <td class="txt_center">자식 선택자</td>
+            <td class="txt_center">&gt;활용</td>
+            <td class="txt_red"> div&gt;a{}, article&gt:div{}</td>
+          </tr>
+          <tr>
+            <td class="num">3</td>
+            <td class="txt_center">자손 선택자</td>
+            <td class="txt_center">공백활용</td>
+            <td class="txt_red"> div&nbsp{}, article&nbsp{}</td>
+          </tr>
+          <tr>
+            <td class="num">4</td>
+            <td class="txt_center">아이디 선택자</td>
+            <td class="txt_center">#활용</td>
+            <td class="txt_red"> #t1{}, table#t1{}</td>
+          </tr>
+          <tr>
+            <td class="num">5</td>
+            <td class="txt_center">클래스 선택자</td>
+            <td class="txt_center">.활용</td>
+            <td class="txt_red"> div.txt{}, .w90{}</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>명칭</th>
+            <th>활용법</th>
+            <th>예문</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </article>
+</body>
+</html>
