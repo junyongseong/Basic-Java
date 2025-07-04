@@ -1,0 +1,180 @@
+@charset "UTF-8";
+
+#contents{
+  width: 900px;
+  height: auto;
+  margin: auto;
+  /*border: 1px solid red;*/
+}
+
+#contents .login_area{
+  display: inline-block;
+  margin-top: 10px;
+  width: 889px;
+  height: 245px;
+  background: url("../img/login_bg.png");
+  /*border: 1px solid fuchsia;*/
+
+}
+.sub_title{
+  text-indent: -9999px;
+}
+
+.tit02{/*회원 로그인*/
+  width: 900px;
+  height: 30px;
+  text-indent: -9999px;
+  background: url("../img/sub_title.png") no-repeat 0 -50px;
+  margin-top: 30px;
+  /*border: 1px solid red;*/
+
+}
+
+.person_login{
+  display: inline-block;
+  position: relative;
+  margin: 40px 50px 40px 50px;
+  width: 390px;
+  height: auto;
+  /*border: 1px solid red;*/
+}
+
+.person_login .tit03{/*일반 개인회원*/
+  width: 290px;
+  height: 78px;
+  margin-bottom: 10px;
+  background: url("../img/sub_title.png") no-repeat 0 -80px;
+  /*border: 1px solid red;*/
+
+}
+
+.input_area{
+  width: 700px;
+}
+.input_area p{
+  margin-bottom: 10px;
+}
+
+.input_area input{
+  display: inline-block;
+  width: 100px;
+  position: absolute;
+  border: 1px solid #888888;
+  border-radius: 5px;
+  left: 60px;
+}
+
+.person_login .input_area p{
+  padding-right: 10px;
+  background: url("../img/bult.png") no-repeat 0 -75px;
+}
+.person_login .input_area>p>label{
+  margin-left: 10px;
+  line-height: 17px;
+}
+.person_login .input_area>p>input{
+  margin-left: 10px;
+
+}
+.btn_area .b_login{
+  width: 100px;
+  height: 70px;
+  background: url("../img/btn.png") no-repeat;
+  position: absolute;
+  top: 80px;
+  right: 90px;
+  bottom: 0;
+}
+
+.person_login .login_search{
+  width: 290px;
+  height: 80px;
+  margin-top: 20px;
+  border-top: 1px solid #767676;
+}
+
+.person_login .login_search label{
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 5px;
+
+}
+
+.person_login .login_search .b_search{/*아이디 비밀번호 찾기*/
+  display: inline-block;
+  margin-top: 7px;
+  width: 200px;
+  height: 30px;
+  background: url("../img/btn.png") no-repeat -90px 0;
+  position: absolute;
+  right: 65px;
+  /*border: 1px solid red;*/
+}
+
+.group_login{/*로그인 전체*/
+  display: inline-block;
+  width: 390px;
+  height: auto;
+  /*border: 1px solid red;*/
+  position: relative;
+}
+
+.group_login .tit04{
+  width: 290px;
+  height: 78px;
+  margin-bottom: 10px;
+  background: url("../img/sub_title.png") no-repeat 0 -160px;
+}
+
+.group_login .btn_area .b_login{/*로그인 버튼*/
+  width: 100px;
+  height: 70px;
+  background: url("../img/btn.png") no-repeat;
+  position: absolute;
+  top: 80px;
+  right: 90px;
+  bottom: 0;
+}
+
+.group_login .login_search{/*아이디 저장 비밀번호 찾기 등 모은것*/
+  width: 290px;
+  height: 80px;
+  margin-top: 20px;
+  border-top: 1px solid #767676;
+  /*border: 1px solid red;*/
+}
+
+.group_login .login_search label{
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 5px;
+
+}
+
+.group_login .login_search .b_search{
+  display: inline-block;
+  margin-top: 7px;
+  width: 200px;
+  height: 30px;
+  background: url("../img/btn.png") no-repeat -90px 0;
+  position: absolute;
+  right: 65px;
+  /*border: 1px solid red;*/
+
+}
+
+.group_login .input_area p{/*아이디 비밀번호*/
+  padding-right: 10px;
+  background: url("../img/bult.png") no-repeat 0 -75px;
+  /*border: 1px solid red;*/
+
+}
+.group_login .input_area>p>label{
+  margin-left: 10px;
+  line-height: 17px;
+
+}
+.group_login .input_area>p>input{/*입력창*/
+  margin-left: 10px;
+
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" type="text/css" href="../css/common.css">
+  <link rel="stylesheet" type="text/css" href="../css/sub_tab.css">
+
+</head>
+<body>
+<article id="wrap">
+  <header id="header">
+    <h1>티월드 로고</h1>
+    <div id="nav">
+      <ul id="menu">
+        <li><a href=""><span class="menu m01">기브유</span></a></li>
+        <li><a href=""><span class="menu m02">위드유</span></a></li>
+        <li><a href=""><span class="menu m03">스마트 전통시장</span></a></li>
+        <li><a href=""><span class="menu m04">BRAVO!</span></a></li>
+        <li><a href=""><span class="menu m05">SKT와 사회공헌</span></a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- =============== 상단영역 끝 ===============-->
+  <!-- =============== 콘텐츠 영역 ===============-->
+  <div id="contents">
+    <p>
+      <img src="../img/@img05.png" alt="이미지5"/>
+    </p>
+    <div class="tab_type01">
+      <ul>
+        <li id="t1"><a href="javascript:ex1()">위드유</a></li>
+        <li id="t2" class="selected"><a href="javascript:ex2()">위드유 영상</a></li>
+        <li id="t3"><a href="javascript:ex3()">위드유 대화</a></li>
+      </ul>
+    </div>
+    <!-- 각 탭에 표현할 내용들 -->
+    <div id="tab1" class="tab_cont">
+      위드유 내용입니다.!
+    </div>
+    <div id="tab2" class="tab_cont show">
+      T1은 4일 오전 (이하 한국시간)  캐나다 밴쿠버 퍼시픽 콜리세움에서 열린
+      ‘2025 미드 시즌 인비테이셔널(이하 MSI)’ 브래킷 스테이지 1라운드 CTBC 플라잉 오이스터(CFO)와 경기에서
+      1세트 승리 이후 2, 3세트를 패하며 매치포인트를 허용했지만, 4, 5세트를 잡아내면서 힘겨운 3-2 역전승을 거뒀다.
+      이로써 T1은 승자조 2라운드에 진출해 모비스타 코이(MKOI) 꺾은 빌리빌리 게이밍(BLG)와 3라운드 진출을 다투게 됐다.
+    </div>
+    <div id="tab3" class="tab_cont">
+      위드유 Tab 내용입니다.!
+    </div>
+  </div>
+  <!-- =============== 콘텐츠 영역 끝 ===============-->
+
+  <!-- =============== 하단 영역 =============== -->
+  <footer id="footer">
+    <div class="footer_area">
+      <ul class="footer_guide">
+        <li><a href="">개인정보처리방침</a></li>
+        <li><a href="">회원이용약관</a></li>
+        <li><a href="">명의도용방지서비스</a></li>
+        <li><a href="">이메일무단수집거부</a></li>
+      </ul>
+
+      <address>
+        서울특별시 강남구 테헤란로 132(역상동) 한독약품빌딩 8층
+        대표이사 : 이도
+        고객상담 : 국번없이 114 혹은 02-2222-2323
+      </address>
+
+      <p class="copyright">
+        Copyright &copy; 2025 SK Telecom. ALL right reserved
+      </p>
+    </div>
+  </footer>
+  <!-- =============== 하단 영역 끝=============== -->
+  <article>
+    <script>
+      function ex1(){
+        //첫번째 Tab을 클릭했을 때 수행하는 곳
+
+        //현재 문서에서 아이디가 t1인 요소를 검색한다.
+        var t1 = document.getElementById("t1");
+        var t2 = document.getElementById("t2");
+        var t3 = document.getElementById("t3");
+
+        t1.className = "selected";//<li class="selected".......
+        t2.className = "";//기존에 있는 지정된 class를 삭제한다.
+        t3.className = "";
+        //-------------탭 처리 ------------------------
+        // 해당 탭에 표현한 내용처리를 지금부터 하자!
+        //먼저 tab1,tab2,tab3이라는 아이디를 가진 요소들 모두 검색하자
+        var tab1 =document.getElementById("tab1");
+        var tab2 =document.getElementById("tab2");
+        var tab3 =document.getElementById("tab3");
+        tab1.className = "tab_cont show";
+        tab2.className = "tab_cont";
+        tab3.className = "tab_cont";
+
+      }
+
+      function ex2(){
+        //첫번째 Tab을 클릭했을 때 수행하는 곳
+
+        //현재 문서에서 아이디가 t1인 요소를 검색한다.
+        var t1 = document.getElementById("t1");
+        var t2 = document.getElementById("t2");
+        var t3 = document.getElementById("t3");
+
+        t2.className = "selected";//<li class="selected".......
+        t1.className = "";//기존에 있는 지정된 class를 삭제한다.
+        t3.className = "";
+        //-------------탭 처리 ------------------------
+        // 해당 탭에 표현한 내용처리를 지금부터 하자!
+        //먼저 tab1,tab2,tab3이라는 아이디를 가진 요소들 모두 검색하자
+        var tab1 =document.getElementById("tab1");
+        var tab2 =document.getElementById("tab2");
+        var tab3 =document.getElementById("tab3");
+        tab2.className = "tab_cont show";
+        tab1.className = "tab_cont";
+        tab3.className = "tab_cont";
+
+      }
+
+      function ex3(){
+        //첫번째 Tab을 클릭했을 때 수행하는 곳
+
+        //현재 문서에서 아이디가 t1인 요소를 검색한다.
+        var t1 = document.getElementById("t1");
+        var t2 = document.getElementById("t2");
+        var t3 = document.getElementById("t3");
+
+        t3.className = "selected";//<li class="selected".......
+        t2.className = "";//기존에 있는 지정된 class를 삭제한다.
+        t1.className = "";
+        //-------------탭 처리 ------------------------
+        // 해당 탭에 표현한 내용처리를 지금부터 하자!
+        //먼저 tab1,tab2,tab3이라는 아이디를 가진 요소들 모두 검색하자
+        var tab1 =document.getElementById("tab1");
+        var tab2 =document.getElementById("tab2");
+        var tab3 =document.getElementById("tab3");
+        tab3.className = "tab_cont show";
+        tab2.className = "tab_cont";
+        tab1.className = "tab_cont";
+      }
+    </script>
+  </article>
+
+
+</article>
+</body>
+</html>

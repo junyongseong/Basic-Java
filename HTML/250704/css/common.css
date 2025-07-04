@@ -1,0 +1,146 @@
+@charset "UTF-8";
+@import "reset.css";
+
+#wrap{
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: white;
+}
+
+#header{
+  width: 970px;
+  height: 120px;
+  margin: auto;
+  position: relative;
+}
+
+#header>h1{
+  width: 181px;
+  height: 59px;
+  background-image: url("../img/logo.png");
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+#nav{
+  width: 100%;
+  background-color: darkorange;
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+}
+
+#nav>#menu{
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+}
+#nav>#menu>li{
+  flex: 1 1 194px;
+  height: 100%;
+
+  /*border: 1px solid red;*/
+}
+
+#nav>#menu>li>a{
+  display: block;
+  width: auto;
+  height: 100%;
+  text-align: center;
+  /*border: 1px solid yellow;*/
+}
+
+#menu>li>a>span.menu{
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  margin-top: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  background: url("../img/gnb_bult.png") no-repeat;
+  padding-left: 25px;
+}
+
+
+
+#menu>li>a>span.m02{  background-position: 0 -22px;}
+#menu>li>a>span.m03{  background-position: 0 -44px;}
+#menu>li>a>span.m04{  background-position: 0 -66px;}
+#menu>li>a>span.m05{  background-position: 0 -86px;}
+
+#footer{
+  width: auto;
+  padding: 40px 0px 50px;
+  background-color: lightgray;
+  margin-top: 50px;
+
+}
+
+#footer .footer_area{
+  width: 900px;
+  margin: auto;
+
+}
+
+#footer.footer_guide{
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+#footer .footer_guide li{
+  display: inline-block;
+  padding: 0px 10px;
+  border-right: 1px solid #9999;
+}
+
+#footer.footer_guide li:last-child{
+  border-right: none;
+}
+
+#footer .footer_guide li a{
+  color: #777;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#footer .footer_guide li a:hover{
+  color: #ff4f00;
+}
+
+#footer address{
+  font-size: 12px;
+  color: #777;
+  padding-top: 10px;
+  padding-bottom: 6px;
+}
+
+#footer .copyright{
+  font-size: 11px;
+  color: #777;
+}
+
+/* 기타 공통 스타일*/
+.ellip{
+  display: inline-block;
+  width: 97%;
+  white-space : nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*****************
+버튼 스타일
+*****************/
+.btn_center{
+  text-align: center;
+}
+.btn{
+  display: inline-block;
+  background: url("../img/btn.png")no-repeat;
+  text-indent: -9999px;
+}
+.btn a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
