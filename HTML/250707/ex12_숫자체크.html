@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form>
+  <label for="b_year">태어난 년도:</label>
+  <!--<input type="number" id="b_year" name="bYear"/>-->
+  <input type="text" id="b_year" name="bYear"/>
+  <button type="button" onclick="ex(this.form)">확인</button>
+</form>
+
+<script>
+  function checkNumber(str) {
+    return !isNaN(str);
+  }
+  function ex(frm) {
+
+    let now = new Date();
+    let c_Year = now.getFullYear(); // 현재연도
+
+    let b_year = document.getElementById("b_year");
+    let year=b_year.value.trim();
+
+    let age =c_Year-year;
+    if(year.length>0){
+        console.log(checkNumber(year));
+        alert(age);
+      }
+      else{
+        alert("생년을 입력하세요")
+      }
+  }
+</script>
+</body>
+</html>

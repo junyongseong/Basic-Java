@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #table {
+      width: 350px;
+      border-collapse: collapse;
+    }
+    #table th, #table td {
+      border: 1px solid #000;
+      padding: 5px;
+    }
+    #table > caption {
+      text-indent: -9999px;
+      height: 0px;
+    }
+    #table thead > tr:first-child td {
+      border: none;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+<article>
+  <header>
+    <h2>테이블 행 추가</h2>
+  </header>
+  <div>
+    <form>
+      <label for="s_name">이름:</label>
+      <input type="text" id="s_name" name="이름" data-item="이름"/><br/>
+      <label for="s_phone">번호:</label>
+      <input type="text" id="s_phone" name="번호" data-item="번호"/>
+    </form>
+    <table id="table">
+      <caption>행추가 테이블</caption>
+      <thead>
+      <tr>
+        <td colspan="4">
+          <button type="button" onclick="exe()">행추가</button>
+        </td>
+      </tr>
+      <tr>
+        <th>번호</th>
+        <th>이름</th>
+        <th>연락처</th>
+        <th>삭제</th>
+      </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</article>
+
+<script>
+  let idx = 1;
+  let table =document.getElementById("table");
+
+  function exe() {
+    let ff = document.forms[0];
+    let sub = ff.elements;
+
+    // 유효성 검사
+    for (let i = 0; i < sub.length; i++) {
+      let str = sub[i].value.trim();
+      if (str.length == 0) {
+        alert(sub[i].dataset.item + "을(를) 입력하세요.");
+        sub[i].value="";
+        sub[i].focus();
+        return;
+      }
+    }
+
+    // td 생성 및 값 넣기
+    let td1 = document.createElement("td");
+    let td2 = document.createElement("td");
+    let td3 = document.createElement("td");
+    let td4 = document.createElement("td");
+
+    td1.innerText = idx++;
+    td2.innerText = sub[0].value.trim();  // 이름
+    td3.innerText = sub[1].value.trim();  // 연락처
+
+    //4번째 컬럼에 버튼객체를 생성해서 추가한다.
+    // 먼저 추가할 button객체를 생성하자!
+    let bt = document.createElement("button");//<button></button>
+    bt.type="button";//<button type="button">
+    bt.id ="bt"+idx;//<button type="button" id ="bt1"></button>
+    bt.innerText ="삭제";//<button type="button" id ="bt1">삭제</button>
+
+    //생성된 버튼객체에 onclick이벤트 걸기
+    //<button type="button" id ="bt1" onclick="함수">삭제</button>
+    bt.onclick =function () {//익명함수
+      //삭제버튼을 클릭할 때 마다 수행하는 곳!
+      //table에 저장된 행 번호 얻어낸다.
+      // let num = table.rowNum;
+      // table.deleteRow(num);
+      table.deleteRow(table.rowNum)
+    };
+    td4.appendChild(bt);//4번째 td에 버튼객체 추가
+
+    // tr 생성 후 td 추가
+    let tr = document.createElement("tr");
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+
+    //tr에 마우스가 올라갈 때 현재 행번호를 table에 rowNum이라는 이름으로 저장한다.
+    //<tr onmouseover ="함수"...
+    tr.onmouseover =function (){
+      //각 tr에 마우스가 올라왔을 때마다 수행하는곳!!!
+      //table객체의 roeNum이라는 이름으로 현재 행의 번호를 저장
+      table.rowNum = this.rowIndex; //this는 tr
+    }
+
+    // tbody에 tr 추가
+    let tbody = document.getElementById("table").getElementsByTagName("tbody")[0];
+    tbody.appendChild(tr);
+
+    // 입력창 초기화
+    // sub[0].value = "";
+    // sub[1].value = "";
+    // sub[0].focus();
+  }
+</script>
+</body>
+</html>

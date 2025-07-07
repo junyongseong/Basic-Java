@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <form action="" method="post">
+    <label for="s_age">나이</label>
+    <input type="text" id="s_age" name="m_age"/><br/>
+
+    <button type="button" onclick="test()">확인</button>
+  </form>
+  <script>
+    function test( ) {
+      //현재 문서에서 아이디가 s_age인 요소를 검색한다.
+      let s_age=document.getElementById("s_age");
+
+      //사용자가 입력한 나이값을 얻어낸다.
+      let age =s_age.value;
+      if (!isNaN(age)){//is Not a Number 숫자가 아니냐
+        //숫자일 경우
+        if(age>=20 && age<30)//20대
+          alert("20대")
+        else if(age>=30 && age<40)
+          alert("30대")
+        else if(age>=40)
+          alert("어르신")
+        else
+          alert("애기들")
+      }else {
+        //숫자가 아닌경우
+        if (age =="" || age.trim().length==0){//입력 안한경우
+          alert("값을 입력하시오!");
+          s_age.value="";
+          s_age.focus();
+        }
+        else
+          alert("숫자를 입력하세요!");//여기로 넘어왔다는건 숫자가 아니라는거
+      }
+    }
+  </script>
+
+</body>
+</html>
