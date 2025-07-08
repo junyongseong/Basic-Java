@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #table{
+      width: 800px;
+      height: 300px;
+      border-collapse: collapse;
+      border: 1px solid #000000;
+    }
+    th{
+      font-weight: bold;
+      text-align: center;
+      border: 1px solid #000000;
+    }
+    .name{
+      width: 150px;
+    }
+    #table tr td{
+      font-weight: bold;
+      text-align: center;
+      border: 1px solid #000000;
+    }
+
+
+  </style>
+</head>
+<body>
+<article>
+  <header>
+    <h1>Group Checkbox연습</h1>
+  </header>
+
+  <table id="table">
+    <caption>그륩체크박스 테이블</caption>
+    <thead>
+    <tr>
+      <th>번호</th>
+      <th class="name">이름</th>
+      <th>
+        <input type="checkbox" id="group1"/>
+        <label for="group1">그룹1</label>
+      </th>
+
+      <th>
+        <input type="checkbox" id="group2"/>
+        <label for="group1">그룹2</label>
+      </th>
+
+      <th>
+        <input type="checkbox" id="group3"/>
+        <label for="group3">그룹3</label>
+      </th>
+
+      <th>
+        <input type="checkbox" id="group4"/>
+        <label for="group4">그룹4</label>
+      </th>
+
+      <th>
+        <input type="checkbox" id="group5"/>
+        <label for="group5">그룹5</label>
+      </th>
+
+      <th>비고</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+      <td>1</td>
+      <td>마루치</td>
+      <td class="chk1"><input type="checkbox" id="1_chk1"/></td>
+      <td class="chk2"><input type="checkbox" id="1_chk2"/></td>
+      <td class="chk3"><input type="checkbox" id="1_chk3"/></td>
+      <td class="chk4"><input type="checkbox" id="1_chk4"/></td>
+      <td class="chk5"><input type="checkbox" id="1_chk5"/></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>이도</td>
+      <td class="chk1"><input type="checkbox" id="2_chk1"/></td>
+      <td class="chk2"><input type="checkbox" id="2_chk2"/></td>
+      <td class="chk3"><input type="checkbox" id="2_chk3"/></td>
+      <td class="chk4"><input type="checkbox" id="2_chk4"/></td>
+      <td class="chk5"><input type="checkbox" id="2_chk5"/></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>일지매</td>
+      <td class="chk1"><input type="checkbox" id="3_chk1"/></td>
+      <td class="chk2"><input type="checkbox" id="3_chk2"/></td>
+      <td class="chk3"><input type="checkbox" id="3_chk3"/></td>
+      <td class="chk4"><input type="checkbox" id="3_chk4"/></td>
+      <td class="chk5"><input type="checkbox" id="3_chk5"/></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>을분</td>
+      <td class="chk1"><input type="checkbox" id="4_chk1"/></td>
+      <td class="chk2"><input type="checkbox" id="4_chk2"/></td>
+      <td class="chk3"><input type="checkbox" id="4_chk3"/></td>
+      <td class="chk4"><input type="checkbox" id="4_chk4"/></td>
+      <td class="chk5"><input type="checkbox" id="4_chk5"/></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>창조리</td>
+      <td class="chk1"><input type="checkbox" id="5_chk1"/></td>
+      <td class="chk2"><input type="checkbox" id="5_chk2"/></td>
+      <td class="chk3"><input type="checkbox" id="5_chk3"/></td>
+      <td class="chk4"><input type="checkbox" id="5_chk4"/></td>
+      <td class="chk5"><input type="checkbox" id="5_chk5"/></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>이순신</td>
+      <td class="chk1"><input type="checkbox" id="6_chk1"/></td>
+      <td class="chk2"><input type="checkbox" id="6_chk2"/></td>
+      <td class="chk3"><input type="checkbox" id="6_chk3"/></td>
+      <td class="chk4"><input type="checkbox" id="6_chk4"/></td>
+      <td class="chk5"><input type="checkbox" id="6_chk5"/></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>송태섭</td>
+      <td class="chk1"><input type="checkbox" id="7_chk1"/></td>
+      <td class="chk2"><input type="checkbox" id="7_chk2"/></td>
+      <td class="chk3"><input type="checkbox" id="7_chk3"/></td>
+      <td class="chk4"><input type="checkbox" id="7_chk4"/></td>
+      <td class="chk5"><input type="checkbox" id="7_chk5"/></td>
+      <td></td>
+    </tr>
+    </tbody>
+
+
+  </table>
+</article>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+  $(function () {
+    /*
+    //id가 all인 요소를 클릭할 때마다 수행하는 이벤트 등록
+    $("#group1").on("click", function () {
+      let ar = $("table>tbody>tr>td.chk1").find(":checkbox");
+      ar.prop("checked", this.checked);
+    });
+    $("#group2").on("click", function () {
+      let ar = $("table>tbody>tr>td.chk2").find(":checkbox");
+      ar.prop("checked", this.checked);
+    });
+    $("#group3").on("click", function () {
+      let ar = $("table>tbody>tr>td.chk3").find(":checkbox");
+      ar.prop("checked", this.checked);
+    });
+    $("#group4").on("click", function () {
+      let ar = $("table>tbody>tr>td.chk4").find(":checkbox");
+      ar.prop("checked", this.checked);
+    });
+    $("#group5").on("click", function () {
+      let ar = $("table>tbody>tr>td.chk5").find(":checkbox");
+      ar.prop("checked", this.checked);
+    });
+   */
+
+    //강사님
+    $("#table thead input:checkbox").click(function () {
+      // console.log("TT")
+      //클릭한 checkbox의 가장 가까운 태그를 알아 낸다.
+      // let p = $(this).parent();
+      let p = $(this).closest("th"); //현재 클릭한 체크박스에 가장 가까운 태그(th)를 반환
+      //앞서 구한 부모태그(th)가 해당 행(tr)에서 몇번째 요소인지 알아내자
+      let idx = $("#table thead tr th").index(p);
+      //구한 index값을 tbodsty에 있는 각 형에서 행당 idx+1번쨰이 엤는 td안에 체크박스들을 얻어낸다.
+      let ar = $("#table tbody td:nth-child("+(idx+1)+") input:checkbox");
+      ar.prop("checked", this.checked);
+    });
+
+    //따로 체크 되는것
+    $("#table>tbody input:checkbox").click(function () {
+      let ch_len = $("#table>tbody td.chk1 input[type=checkbox]:checked").length;
+      //이제 tbody안에 존재하는 모든 체크박스의 수를 구하자
+      let len = $("#table>tbody td.chk1 input[type=checkbox]").length;
+      if (len == ch_len){
+        $("#group1").prop("checked", true);
+      } else {
+        $("#group1").prop("checked", false);
+      }
+    });
+
+
+
+    $("#table>tbody input:checkbox").click(function () {
+      let ch_len = $("#table>tbody td.chk2 input[type=checkbox]:checked").length;
+      //이제 tbody안에 존재하는 모든 체크박스의 수를 구하자
+      let len = $("#table>tbody td.chk2 input[type=checkbox]").length;
+      if (len == ch_len){
+        $("#group2").prop("checked", true);
+      } else {
+        $("#group2").prop("checked", false);
+      }
+    });
+
+    $("#table>tbody input:checkbox").click(function () {
+      let ch_len = $("#table>tbody td.chk3 input[type=checkbox]:checked").length;
+      //이제 tbody안에 존재하는 모든 체크박스의 수를 구하자
+      let len = $("#table>tbody td.chk3 input[type=checkbox]").length;
+      if (len == ch_len){
+        $("#group3").prop("checked", true);
+      } else {
+        $("#group3").prop("checked", false);
+      }
+    });
+
+    $("#table>tbody input:checkbox").click(function () {
+      let ch_len = $("#table>tbody td.chk4 input[type=checkbox]:checked").length;
+      //이제 tbody안에 존재하는 모든 체크박스의 수를 구하자
+      let len = $("#table>tbody td.chk4 input[type=checkbox]").length;
+      if (len == ch_len){
+        $("#group4").prop("checked", true);
+      } else {
+        $("#group4").prop("checked", false);
+      }
+    });
+
+    $("#table>tbody input:checkbox").click(function () {
+      let ch_len = $("#table>tbody td.chk5 input[type=checkbox]:checked").length;
+      //이제 tbody안에 존재하는 모든 체크박스의 수를 구하자
+      let len = $("#table>tbody td.chk5 input[type=checkbox]").length;
+      if (len == ch_len){
+        $("#group5").prop("checked", true);
+      } else {
+        $("#group5").prop("checked", false);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

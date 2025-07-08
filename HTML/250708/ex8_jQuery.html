@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h1>next()함수 활용</h1>
+<input type="checkbox" id="ch1" value="0"/>
+<label for="ch1">공개용</label>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+  $(function() {
+    // id가 ch1인 요소에 클릭이벤트를 적용하자!
+    $("#ch1").click(function(){
+      // ch1이 체크된 상태면 true, 그렇지 않다면 false
+      // console.log($(this).is(":checked")); // 속성이 checked가 되어있니?
+
+      // 체크박스가 체크된 상태면 "비공개용", 그렇지 않다면 "공개용"
+      // next() 왼쪽 피연산자의 다음으로 라는 의미(다음 요소), 연속 사용 가능
+      if($(this).is(":checked"))
+        $(this).next().text("비공개용");
+      else
+        $(this).next().text("공개용");
+    });
+  });
+</script>
+</body>
+</html>

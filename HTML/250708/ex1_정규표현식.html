@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <form action="" method="post">
+    <label for="b_year">태어난 년도:</label>
+    <input type="text" id="b_year"name="bYear"/>
+    <button type="button" onclick="ex(this.form)">확인</button><!-- 현재 객체를 포함하고 있는 폼-->
+  </form>
+  <script>
+    function ex(frm) {
+      let str = frm.bYear.value;//폼 객체로 접근할 때는 반드시 name을 이용해야한다.
+      //console.log(str)
+      let value = m_trim(str);//공백제거하는 함수 호출
+
+      //사용자가 입력하는 태어난 년도로 지정하기
+      frm.bYear.value =value;
+    }
+      function m_trim(msg) {
+        //" "띄운 공백을 찾아서 붙힌 공백("")으로 바꿔주는 함수
+        let ss = msg.replace(/^\s+|\s|\s+$/g,"");
+        /*
+         /^ : 처음 시작부분으르 의미한다.
+         \s : 띄운 공백을 의미함
+          + : +기호앞의 정규표현식과 일치하는 경우가 1번이상일 때를 의미함
+          | : 또는
+         $/ : 끝부분
+          g : 찾음
+         */
+        return ss;//공백 제거된값을 반환한다.
+      }
+
+  </script>
+</body>
+</html>

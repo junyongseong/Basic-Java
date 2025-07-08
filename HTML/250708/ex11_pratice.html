@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+    #table{
+      width: 800px;
+      border-collapse: collapse;
+      border: 1px solid #000;
+    }
+    tr,td{
+      border: 1px solid #000;
+      text-align: center;
+    }
+    thead{
+      font-weight: bold;
+    }
+
+
+  </style>
+<body>
+ <h1>Group Checkbox연습</h1>
+  <table id="table">
+    <caption>그룹체크박스 테이블</caption>
+    <thead>
+    <tr>
+      <td>번호</td>
+      <td>이름</td>
+      <td><input type="checkbox" style="width: 30px; height: 30px;"id="group1"><label for="group1"> 그룹1</label></td>
+      <td><input type="checkbox" id="group2"><label for="group2"> 그룹2</label></td>
+      <td><input type="checkbox" id="group3"><label for="group3"> 그룹3</label></td>
+      <td><input type="checkbox" id="group4"><label for="group4"> 그룹4</label></td>
+      <td><input type="checkbox" id="group5"><label for="group5"> 그룹5</label></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><span>1</span></td>
+      <td><span>마루치</span></td>
+      <td><input type="checkbox" class="group1"></td>
+      <td><input type="checkbox" class="group2"></td>
+      <td><input type="checkbox" class="group3"></td>
+      <td><input type="checkbox" class="group4"></td>
+      <td><input type="checkbox" class="group5"></td>
+    </tr>
+    <tr>
+      <td><span>2</span></td>
+      <td><span>이도</span></td>
+      <td><input type="checkbox" class="group1"></td>
+      <td><input type="checkbox" class="group2"></td>
+      <td><input type="checkbox" class="group3"></td>
+      <td><input type="checkbox" class="group4"></td>
+      <td><input type="checkbox" class="group5"></td>
+    <tr>
+      <td><span>3</span></td>
+      <td><span>일지매</span></td>
+      <td><input type="checkbox" class="group1"></td>
+      <td><input type="checkbox" class="group2"></td>
+      <td><input type="checkbox" class="group3"></td>
+      <td><input type="checkbox" class="group4"></td>
+      <td><input type="checkbox" class="group5"></td>
+    </tr>
+    <tr>
+      <td><span>4</span></td>
+      <td><span>을불</span></td>
+      <td><input type="checkbox" class="group1"></td>
+      <td><input type="checkbox" class="group2"></td>
+      <td><input type="checkbox" class="group3"></td>
+      <td><input type="checkbox" class="group4"></td>
+      <td><input type="checkbox" class="group5"></td>
+    </tr>
+    <tr>
+      <td><span>5</span></td>
+      <td><span>창조리</span></td>
+      <td><input type="checkbox" class="group1"></td>
+      <td><input type="checkbox" class="group2"></td>
+      <td><input type="checkbox" class="group3"></td>
+      <td><input type="checkbox" class="group4"></td>
+      <td><input type="checkbox" class="group5"></td>
+    </tr>
+    <tr>
+      <td><span>6</span></td>
+      <td><span>이순신</span></td>
+      <td><input type="checkbox" class="group1"></td>
+      <td><input type="checkbox" class="group2"></td>
+      <td><input type="checkbox" class="group3"></td>
+      <td><input type="checkbox" class="group4"></td>
+      <td><input type="checkbox" class="group5"></td>
+    </tr>
+    <tr>
+      <td><span>7</span></td>
+      <td><span>송태섭</span></td>
+      <td><input type="checkbox" class="group1"></td>
+      <td><input type="checkbox" class="group2"></td>
+      <td><input type="checkbox" class="group3"></td>
+      <td><input type="checkbox" class="group4"></td>
+      <td><input type="checkbox" class="group5"></td>
+    </tr>
+    </tbody>
+  </table>
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+ <script>
+    $(function () {
+      //id가 group1인 요소에 클릭할 때마다 수행하는 이벤트 등록
+      $("#group1").on("click",function () {
+        //tbody안에 있는 모든 checkbox들을 검색하여 변수 ar에 저장!
+        //검색된 체크박스들과 현재 클릭한 all의 상태를 확인하자
+        $(".group1").prop("checked", this.checked);
+      });
+      $("#group2").on("click",function () {
+        //tbody안에 있는 모든 checkbox들을 검색하여 변수 ar에 저장!
+        //검색된 체크박스들과 현재 클릭한 all의 상태를 확인하자
+        $(".group2").prop("checked", this.checked);
+      });
+      $("#group3").on("click",function () {
+        //tbody안에 있는 모든 checkbox들을 검색하여 변수 ar에 저장!
+        //검색된 체크박스들과 현재 클릭한 all의 상태를 확인하자
+        $(".group3").prop("checked", this.checked);
+      });
+      $("#group4").on("click",function () {
+        //tbody안에 있는 모든 checkbox들을 검색하여 변수 ar에 저장!
+        //검색된 체크박스들과 현재 클릭한 all의 상태를 확인하자
+        $(".group4").prop("checked", this.checked);
+      });
+      $("#group5").on("click",function () {
+        //tbody안에 있는 모든 checkbox들을 검색하여 변수 ar에 저장!
+        //검색된 체크박스들과 현재 클릭한 all의 상태를 확인하자
+        $(".group5").prop("checked", this.checked);
+      });
+    })
+  </script>
+</body>
+</html>
