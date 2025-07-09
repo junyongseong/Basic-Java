@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+</head>
+<body>
+<form action="/MyServlet4" method="post">
+    ID: <input type="text" id="m_id" name="m_id"/><br/>
+    Name: <input type="text" id="m_name" name="m_name"/><br/>
+
+    Phone:
+    <select id="phone" name="m_phone">
+        <option value="010">010</option>
+        <option value="011">011</option>
+        <option value="02">02</option>
+    </select>
+        -
+        <input type="text" name="m_phone"/>
+        -
+        <input type="text" name="m_phone"/>
+    <br/><br/>
+
+    Hobby:
+    <label><input type="checkbox" name="hobby" value="독서"/>독서</label>
+    <label><input type="checkbox" name="hobby" value="영화"/>영화</label>
+    <label><input type="checkbox" name="hobby" value="게임"/>게임</label>
+    <br/><br/>
+
+    <button type="button" onclick="exe(this.form)">저장</button>
+</form>
+
+<script>
+    function exe(frm) {
+        if (frm.m_id.value.trim() == "") {
+            alert("ID를 입력하세요!");
+            frm.m_id.focus();
+            return;
+        }
+        if (frm.m_name.value.trim() == "") {
+            alert("이름을 입력하세요!");
+            frm.m_name.focus();
+            return;
+        }
+        frm.submit();
+    }
+</script>
+</body>
+</html>
