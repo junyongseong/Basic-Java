@@ -183,6 +183,7 @@
 <hr/>
 <label for="dir">현재위치:</label>
 <span id="dir"><%=dir%></span>
+<p/>
 <p class="before">
     <a href="javascript:before()">상위로</a>
 </p>
@@ -198,7 +199,20 @@
     </thead>
     <tbody>
     <%
+
         //[상위로] 기능을 구현
+        if(!dir.equalsIgnoreCase(mvo.getM_id())){
+            //예를 들어 현재 위치가 "mmm/abc/1234라면 상이로 기능은 "mmm/abc"를 의미한다.
+            int idx =dir.lastIndexOf("/");
+            String upPath=dir.substring(0,idx);//idx전까지
+    %>
+    <tr>
+        <td colspan="2">
+            <a href ="javascript:goUp('<%=upPath%>')">../</a>
+        </td>
+    </tr>
+    <%
+        }
 
         //현재 위치 값(dir)을 가지고 File객체를 만들기 위해 절대경로
         String realPath = application.getRealPath("/members/"+dir);
@@ -262,11 +276,10 @@
     function before() {
         //상위로를 클릭했을때 상위 폴더로 갈 수 있는 기능
 
-        //현재 문서에서 자신의 이름을 지운 폴더로 가는기능을 구현해야함
-        //먼저 now라는 이름으로 문서에서 ff인 폼객체 안에 현재 경로를 찾아야함
+        //먼저 now라는 이름으로 문서에서 ff인 폼객체 안에 현재 경로를 찾음
         let now = document.ff.cPath.value;
 
-        if (now.indexOf("/")>-1){
+        if (now.indexOf("/")>0){
             let up = now.substring(0, now.lastIndexOf("/"));
             document.ff.cPath.value = up;
         }
@@ -276,7 +289,11 @@
         // console.log(111);
         document.ff.action = "myDisk.jsp";
         document.ff.submit();
-
+    }
+    function goUp(path){
+        document.ff.cPath.value=path;
+        document.ff.action = "myDisk.jsp";
+        document.ff.submit();
     }
 </script>
 </body>
