@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <mvc:annotation-driven/>
+
+    <!--    bean 들은 생성되는 객체들을 의미
+            프로젝트 어디서든 쓸수 있는 얘들을 여기다 넣어야함 ex)FACTORY와 팩토리 를 쓰는 DAO-->
+    <bean class="ex1.vo.TestVO" id="vo1">
+        <!--    bean이 읽힐때 TestVO를 생성
+                이건 setMsg와 같음 private는 못건드리니 setter를 부르는거고 없으면 오류남
+                setterinjection임 property보면 setterinjection을 불러왔구나 생각하면 됨 -->
+        <property name="msg">
+            <value>DI 연습입니다.</value>
+        </property>
+    </bean>
+
+    <!--    이렇게 만들면 무조건 기본 생성자를 부르는것
+            만약 인자가 있는 생성자를 부르고 싶으면 property를 넣으면 안됨 setter injection이기 때문에-->
+    <bean class="ex1.vo.Test2VO" id="vo2">
+<!--        아래 주석 2개는 그냥 기본 생성자 즉 인자 없는 생성자
+            생성자 인젝션 쓰려면 constructor-arg 이거 써야함-->
+        <!--        <property name="str" value="연습2"/> -->
+        <!--        <property name="value" value="100"/>-->
+        <constructor-arg value="Test2VO 연습입니다."/>
+    </bean>
+
+<!--        Test3VO를 생성하는 빈을 정의하자!
+            생성될 때 인자로 3개의 값을 저장해야 한다.
+            첫번째 name = "홍길동"
+            두번째 age = 23
+            세번째 isMember = true -->
+    <bean class="ex1.vo.Test3VO" id="vo3">
+        <constructor-arg value="홍길동"/>
+        <constructor-arg value="23"/>
+        <constructor-arg value="true"/>
+    </bean>
+
+<!--    위에있는 tes2VO를 찍어보기 위해 id를 참조한다(ref)
+        즉 참조할필요 없는것들은 id를 넣을 필요가 없음 -->
+    <bean class="ex1.vo.Test4VO" id="vo4">
+        <property name="t2" ref="vo2"/>
+    </bean>
+
+
+
+</beans>
