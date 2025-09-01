@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bbs">
+    <resultMap id="map1" type="mybatis.vo.BbsVO">
+        <id property="b_idx" column="b_idx"/>
+        <collection property="c_list" ofType="mybatis.vo.CommVO" select="comm.list" column="b_idx"/>
+        <!--collection : list와 같이 여러개가 있을 경우, comm.list에 b_idx를 보내 CommVO에 있는 c_list에 저장-->
+    </resultMap>
+
+    <!--총 게시물 수를 반환하는 기능-->
+    <select id="totalCount" resultType="int" parameterType="String">
+        SELECT COUNT(*) FROM bbs_t WHERE status = 0 and bname = #{bname}
+    </select>
+
+    <!--원글 목록 : 인자 3개 - bname, begin, end-->
+    <!--@RN: 변수 선언, =@RN+1 1개씩 증가, row 부분에 해당-->
+    <select id="list" parameterType="Map" resultMap="map1">
+        SELECT * FROM ( SELECT @RN:=@RN+1 AS rnum, a.* FROM(
+        SELECT * FROM bbs_t WHERE status = 0 and bname = #{bname} order by b_idx DESC
+        ) a, ( SELECT @RN:=0 ) b
+        ) c WHERE c.rnum BETWEEN #{begin} and #{end}
+    </select>
+    <!--원글 저장-->
+    <insert id="add" parameterType="Map">
+        INSERT INTO bbs_t( subject, writer, content, file_name, ori_name, write_date, ip, hit, bname, status )
+        VALUES ( #{subject}, #{writer}, #{content}, #{fname}, #{oname}, NOW(), #{ip}, 0, #{bname}, 0 )
+    </insert>
+    <!--원글 보기-->
+    <select id="getBbs" parameterType="String" resultMap="map1">
+        SELECT * FROM bbs_t
+        where b_idx = #{idx}
+    </select>
+    <!--원글 삭제-->
+    <update id="del" parameterType="String">
+        UPDATE bbs_t SET status = 1 WHERE b_idx = #{b_idx}
+    </update>
+    <!--조회수 증가-->
+    <update id="hit" parameterType="String">
+        UPDATE bbs_t SET hit = hit + 1 WHERE b_idx = #{b_idx}
+    </update>
+    <!--원글 수정-->
+    <update id="edit" parameterType="mybatis.vo.BbsVO">
+        UPDATE bbs_t
+        <trim prefix="SET" suffixOverrides=",">
+            subject = #{subject}, content = #{content}, ip = #{ip}
+            <if test="fname != null">
+                ori_name = #{ori_name},
+                file_name = #{file_name}
+            </if>
+            WHERE b_idx = #{b_idx}
+        </trim>
+    </update>
+
+    <insert id="save" parameterType="mybatis.vo.DataVO">
+        INSERT INTO bbs_t(subject, writer, content, write_date, ip, file_name, ori_name, bname, status, hit)
+        VALUES(#{title}, #{writer}, #{content}, NOW(), #{ip}, #{file_name}, #{ori_name}, #{bname}, 0, 0)
+    </insert>
+</mapper>
