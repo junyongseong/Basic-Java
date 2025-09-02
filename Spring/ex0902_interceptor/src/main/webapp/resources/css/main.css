@@ -1,0 +1,204 @@
+@charset "UTF-8";
+
+#contents{
+  width: 970px;
+  height: auto;
+  margin: auto;
+  /*border: 1px solid red;*/
+}
+
+.main_news {
+  display: flex;
+  width: auto;
+  height: 240px;
+  padding-bottom: 20px;
+  background: url("../img/gra_bg.png");
+  padding: 40px 50px;
+}
+
+.main_news .news_type01{
+  display: inline-block;
+  width: 245px;
+  overflow: hidden;
+  margin-left: 60px;
+  position: relative;
+  /*border: 1px solid blue;*/
+
+}
+
+#contents .news_type01.fo{
+  margin: 0px 60px;
+}
+
+.title{
+  height: 20px;
+  background: url("../img/main_title.png") no-repeat;
+  text-indent: -9999px;
+  margin-bottom: 6px;
+
+}
+
+.main_news .fc .title{
+  background-position: 0px -20px;
+
+}
+
+.main_news .fr .title{
+  background-position: 0px -40px;
+
+}
+
+#contents .news_type01 .thum_img{
+  display: inline-block;
+  width: 245px;
+  height: 148px;
+  overflow: hidden;
+}
+
+#contents .news_type01 .thum_img img{
+  width: 100%;
+  height: 100%;
+
+}
+
+
+.subject{
+  height: 35px;
+  line-height: 35px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.subject:hover{
+  color: #ff4f00;
+}
+
+.main_news .writer{
+  position: absolute;
+  left: 3px;
+  font-size: 11px;
+  color: #888888;
+}
+
+.main_news .more_view{
+  position: absolute;
+  right: 3px;
+  font-size: 11px;
+  color: #888888;
+
+}
+
+.main_board{
+  width: auto;
+  padding: 50px 15px;
+}
+
+
+.main_board .board_type01{
+  position: relative;
+  width: 250px;
+  overflow: hidden;
+  margin-left: 50px;
+  display: inline-block;
+  /*border: 1px solid red;*/
+}
+
+.main_board .board_type01:nth-child(1){
+  margin-left: 0px;
+}
+
+.main_board .board_type01:nth-child(3){
+  margin-top: 20px;
+  width: 290px;
+}
+
+.main_board .board_type01:nth-child(1).board_type01 .title{
+  background-position: 0 -60px;
+}
+
+.main_board .board_type01:nth-child(2).board_type01 .title{
+  background-position: 0 -80px;
+}
+
+.main_board .board_type01 .more_view{
+  position: absolute;
+  top: 3px;
+  right: 0px;
+  padding-right: 10px;
+  background: url("../img/bult.png") no-repeat 38px -59px;
+}
+
+.main_board .board_type01 .notice li{
+  position: relative;
+  height: 23px;
+  line-height: 23px;
+}
+
+.main_board .board_type01 .notice li a{
+  display: inline-block;
+  width: 200px;
+  overflow: hidden;
+  font-size: 12px;
+}
+
+.main_board .board_type01 .notice li .date{
+  position: absolute;
+  right: 0;
+  top: 4px;
+  overflow: hidden;
+  font-size: 10px;
+}
+
+article.art{
+  display: block;
+  overflow: hidden;
+}
+
+
+article.art .thum_img{
+  display: inline-block;
+  width: 65px;
+  height: 65px;
+}
+
+article.art .src{
+  display: inline-block;
+  width: 160px;
+  margin-left: 5px;
+}
+
+/*배너 작업*/
+.main_board .board_type01 .banner{
+  display: inline-block;
+  width: 137px;
+  height: 118px;
+  border: 1px solid #555555;
+  background: url("../img/main_banner.png") no-repeat;
+  border-radius: 10px;
+  text-indent: -9999px;
+}
+
+.main_board .board_type01 .banner a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.main_board .board_type01 .b01{
+  background-position: -137px 0px;
+}
+/**play버튼 놓기**/
+#btn_play{
+  display: inline-block;
+  width: 52px;
+  height: 51px;
+  background: url("../img/icon_play.png")no-repeat;
+  position: absolute;
+  top: 77px;
+  left: 94px;
+}
+#btn_play a{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
