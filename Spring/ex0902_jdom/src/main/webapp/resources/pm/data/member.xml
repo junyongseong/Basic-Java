@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<members>
+    <member>
+        <name>마루치</name>
+        <email>maru@korea.com</email>
+        <phone>010123412333</phone>
+    </member>
+    <member>
+        <name>이루치</name>
+        <email>ee@korea.com</email>
+        <phone>01012112333</phone>
+    </member>
+    <member>
+        <name>삼루치</name>
+        <email>sam@korea.com</email>
+        <phone>01012349333</phone>
+    </member>
+</members>
