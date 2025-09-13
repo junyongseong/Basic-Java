@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs        # 기본 그대로 써도 됨
+    version: OPENAPI_3_1      # OpenAPI 3.1 사용
+  swagger-ui:
+    path: /docs               # UI를 /docs 로 보여주기 (기본: /swagger-ui.html)
+    operationsSorter: method  # 메서드명 정렬
+    tagsSorter: alpha         # 태그 알파벳 정렬
